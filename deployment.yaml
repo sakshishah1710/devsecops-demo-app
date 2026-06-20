@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devsecops-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devsecops-app
+    template:
+      metaddata:
+        labels:
+          app: devsecops-app
+      spec:
+        containers:
+        - name: devsecops-app
+          image: sakshidocker2002/devsecops-demo:1
+          ports:
+          - containerPort:5000 
